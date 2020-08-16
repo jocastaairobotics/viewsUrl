@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import *
+from .models import Universitie, Department, Subject, Chapter, Topic
 # Register your models here.
 admin.site.register(Universitie)
 admin.site.register(Department)
