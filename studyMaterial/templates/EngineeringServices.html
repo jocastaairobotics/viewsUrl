@@ -1,0 +1,35 @@
+{%extends './main.html'%}
+    {%block body%}
+    {% load static %}
+    <img class="banner" src="{%static 'IES.jfif'%}" alt="banner">
+    <div class="Paper">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <select name="EngineeringServices">
+                <option value="">Department</option>
+                <option value="2">Mechanical Engineering</option>
+                <option value="3">Mechanical Sandwitch Engineering</option>
+                <option value="4">Electronics And Telecommunication Engineering</option>
+                <option value="5">Electrical Engineering</option>
+                <option value="6">Computer Engineering</option>
+                <option value="7">Civil Engineering</option>
+                <option value="8">Instrumentation Engineering</option>
+                <option value="9">Chemical Engineering</option>
+                <option value="10">Information Technology Engineering</option>
+            </select>
+            <input id="submits" type="submit" value="OK">
+        </form>
+    </div>
+    <div class="data">
+        {%for i in Service%}
+        <table>
+            <tr><td><a class="papers" href="{{i.papers.url}}" target="_blank">{{i}}</a></td></tr>
+        </table>
+        {%endfor%}
+    </div>
+    <div class="blank">
+
+    </div>
+    
+
+    {%endblock%}

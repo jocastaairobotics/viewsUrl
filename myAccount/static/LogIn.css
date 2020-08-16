@@ -1,0 +1,143 @@
+.main{
+    width: 80%;
+    display: table;
+    clear: both;
+    border: 1px solid #320582;
+}
+.main-body {
+    text-align: center;
+}
+
+ .create{
+     display:none;
+ }
+.SignUp{
+    text-align: center;
+    width: 50%;
+    height: 100vh;
+    float: left;
+    background-image: url("logo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.LogIn{
+    width:50%;
+    height: 100vh;
+    float: left;
+    background-image: url("logo1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.Login{
+    margin-top:30%;
+}
+
+#logIn{
+    color: white;
+    margin: 10px;
+    text-align:center;
+}
+#inp{
+    margin-left: 50px;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 8px;
+}
+
+Label{
+    margin-top: 20px;
+    color: white;
+    font-family:'Libre Baskerville', serif;
+    margin-left: 50px;
+}
+
+.email{
+    margin-left: 50px;
+}
+
+.password{
+    margin-top:15px;
+    margin-left: 50px;
+}
+.submit{
+    text-align: center;
+    margin-top:15px;
+    background-image: url("button.jpg");
+}
+
+.logos{
+    margin-top: 30%;
+}
+
+#error{
+    color: red;
+}
+
+@media only screen and (max-width: 1072px){
+    .main{
+        width: 100%;
+        display: block;
+        clear: both;
+        border: 1px solid #320582;
+        margin: auto;
+        /* margin-top: 100px; */
+    }
+    
+    .create{
+        display:block;
+    }
+    .SignUp{
+        display:none;
+    }
+    .LogIn{
+        width:100%;
+        height: 100vh;
+        float: left;
+        background-image: url("logo1.png");
+    }
+    
+    .Login{
+        margin-top:30%;
+    }
+    
+    #logIn{
+        color: white;
+        margin: 10px;
+        text-align:center;
+    }
+    #inp{
+        margin-left: 50px;
+        border-radius: 10px;
+        margin-top: 10px;
+        padding: 8px;
+        background-color: #fff;
+    }
+    
+    Label{
+        margin-top: 20px;
+        color: white;
+        font-family:'Libre Baskerville', serif;
+        margin-left: 50px;
+    }
+    
+    .data{
+        margin-left: 50px;
+        margin-top:15px;
+        margin-left: 50px;
+    }
+
+    .submit{
+        text-align: center;
+        margin-top:15px;
+        margin-left: 50px;
+        border-radius: 10px;
+        /* margin-top: 10px; */
+        padding: 8px;
+        background-image: url("button.jpg");
+    }
+    
+    .logos{
+        margin-top: 30%;
+    }
+}

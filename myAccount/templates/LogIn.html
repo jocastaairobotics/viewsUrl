@@ -1,0 +1,39 @@
+{%extends 'main.html'%}
+    {%block body%}
+    {% csrf_token %}
+    <div class="main-body">
+    <div class="main">
+        <div class="SignUp">
+            <div class="logos">
+                <span id="welcome" style="color:#4B0082"><p>Welcome to</p></span>
+                    <h2 id="techSeed">TechSeed</h2>
+                    <a style="color:white;" href="{%url 'signUp'%}">Create a new Account</a>
+            </div>
+        </div>
+        <div class="LogIn">
+            <div class = "Login">
+            <h2 id = 'logIn'>LogIn</h2>
+            <form class="forms"action="" method="POST">
+                {% csrf_token %}
+                <div class="data">
+                    <Label>Email</Label><br>
+                    <input id="inp" type="email" placeholder="Email" required size="50" name="Email" required><br>
+                </div>
+                <div class="data">
+                    <Label>Password</Label><br>
+                    <input id="inp" type="password" placeholder="Password" name="Password"
+                    required size="50" ><br>
+                </div>
+                <div class="submit">
+                    <input type="submit" value="Sign Up" style="padding: 10px 20px;">
+                </div>
+            </form>
+            <a class="create" style="color:white;" href="{%url 'signUp'%}">Create a new Account</a>
+            </div>
+            {%for i in messages %}
+                <p id="error">{{i}}</p>
+            {%endfor%}
+        </div>
+    </div>
+</div>
+    {%endblock%}

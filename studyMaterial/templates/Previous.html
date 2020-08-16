@@ -1,0 +1,50 @@
+{%extends './main.html'%}
+    {%block body%}
+    {% load static %}
+    <img class="banner" src="{%static 'question.jpg'%}" alt="banner">
+    <!-- <h1 class="title">Previous Years</h1><br><br> -->
+    <div class="Paper">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <select name="Year">
+                <option value="">Select Year</option>
+                <option value="First Year">First Years</option>
+                <option value="Second Year">Second Years</option>
+                <option value="Third Year">Third Years</option>
+                <option value="Fourth Year">Fourth Years</option>
+            </select>
+
+            <select name="Department">
+                <option value="">Department</option>
+                <option value="1">First Years</option>
+                <option value="2">Mechanical Engineering</option>
+                <option value="3">Mechanical Sandwitch Engineering</option>
+                <option value="4">Electronics And Telecommunication Engineering</option>
+                <option value="5">Electrical Engineering</option>
+                <option value="6">Computer Engineering</option>
+                <option value="7">Civil Engineering</option>
+                <option value="8">Instrumentation Engineering</option>
+                <option value="9">Chemical Engineering</option>
+                <option value="10">Information Technology Engineering</option>
+            </select>
+            <input id="submits" type="submit" value="OK">
+        </form>
+    </div>
+    <div class="data">
+        {% for i, j in data.items %}
+        <table>
+            <tr>
+                <th><h3>{{i}}</h3></th>
+            </tr>
+            {% for k,v in j.items %}
+            <tr>
+                <td><a class="papers" href="{{v.url}}" target="_blank">{{k}}</a></td>
+            </tr>
+            {%endfor%}
+        </table>
+        {%endfor%}
+    </div>
+    <div class="blank">
+
+    </div>
+    {%endblock%}

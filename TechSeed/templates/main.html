@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {%load static%}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechSeed Education</title>
+    {%block head%}
+    {%endblock head%}
+    <link rel="stylesheet" href="{% static 'main.css'%}">
+    <link rel="stylesheet" href="{% static 'LogIn.css'%}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'studyMaterials.css'%}">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    {% csrf_token %}
+</head>
+<body>
+    <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="menu">
+        <i class="fas fa-bars"></i>
+      </label>
+        <label class="logo"><img src="{%static 'logo.png'%}" alt="logo"></label>
+        <ul class ="navi">
+            <li><a class='menu-tab' href="{%url 'main'%}"><i class="fas fa-home"></i>  Home</a></li>
+            <li><a class='menu-tab' href="{%url 'freeClass'%}"><i class="fas fa-play-circle"></i>  Free Live Classes</a></li>
+            <li><a class='menu-tab' href="{%url 'paidClass'%}"><i class="fas fa-university"></i>  Join classes</a></li>
+            <li><a class='menu-tab' href="#"><i class="fas fa-edit"></i>  Question Paper</a>
+                  <ul class="dropdown-menu">
+                    <li><a class='menu-tab' href="{%url 'previousYear'%}">Previous Year Question Paper</a></li>
+                    <li><a class='menu-tab' href="{%url 'Gate'%}">Gate</a></li>
+                    <li><a class='menu-tab' href="{%url 'EngineeringServices'%}">Indian Engineering Services</a></li>
+                  </ul>
+            </li>
+            {%if user.is_authenticated%}
+            <li><a class='menu-tab' href="#">Hello,{{user.first_name}}</a></li>
+            <li><a class='menu-tab' href="{%url 'LogOut'%}"><i class="fas fa-user-circle"></i> LogOut</a></li>
+            {%if user.is_staff %}
+            {%endif%}
+            {%else%}
+            <li><a class='menu-tab' href="{%url 'LogIn'%}"><i class="fas fa-user-circle"></i> Account</a></li>
+            {%endif%}
+            <!-- <li><a href="{%url 'AboutUs'%}">Contact Us</a></li> -->
+        </ul>
+    </nav>
+    {%block body%}
+    
+    <span id="welcome"><p>Welcome to</p></span>
+                    <h2 id="techSeed">TechSeed</h2>
+                    <span id="upcoming"><p>TechSeed Education is upcoming online tutorial platform for Engineering and Non-Engineering field <br>
+                    here will conduct extra classes and tution for Undergraduation and Postgraduation student</p></span>
+                <div id="image">
+                    <ul class="images">
+                        <li><a href="#"><img class="img" src="{%static 'Civil.png' %}" alt="Civil Engineering"></a></li>
+                        <li><a href="#"><img class="img" src="{%static 'Elect.png' %}" alt="Electrical Engineering"></a></li>
+                        <li><a href="#"><img class="img" src="{%static 'MECH.png' %}" alt="Mechanical Engineering"></a></li>
+                        <li><a href="#"><img class="img" src="{%static 'Entc.png' %}" alt="Entc Engineering"></a></li>
+                        <li><a href="#"><img class="img" src="{%static 'Computer.png' %}" alt="Computer Engineering"></a></li>
+                    </ul>
+                </div>
+                <span id="siteseal"><script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=YAafWSh40cltEbuWBHFOzyZHkECAl9GTKLhrxMs5Jg0DW08WfSTSx98juYaP"></script></span>
+    {%endblock%}
+    <script type='text/javascript' src="{% static 'techSeed.js'%}"></script>
+    <script src="https://cdn.plyr.io/3.6.2/plyr.polyfilled.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>
